@@ -55,7 +55,7 @@ int gather_frequency = -1;
 Gen gl_timings_gen;
 
 // Whether time measurements should be gathered in this frame
-bool gather_timings = true;
+bool gather_timings = false;
 } // namespace
 
 void kxt::init ()
