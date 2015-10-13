@@ -87,7 +87,7 @@ void kxt::frame_start ()
     region_stack.clear();
     regions.clear();
 
-    if (gather_frequency > 1)
+    if (gather_frequency >= 1)
     {
         // Decide whether we should gather gl timings in this frame
         std::uniform_int_distribution<int> dis(1, gather_frequency);
