@@ -1,5 +1,5 @@
-#include "kxtime.h"
-#include <Timer.h>
+#include <kxtime.h>
+#include <timer.h>
 
 #include <unordered_map>
 #include <vector>
@@ -9,6 +9,7 @@
 #include <sstream>
 
 using namespace kxt;
+using namespace kx;
 
 namespace
 {
@@ -20,10 +21,10 @@ using Gen = std::mt19937;
 // below.
 struct StartEnd
 {
-    TimeReading start;
-    TimeReading end;
+    time_point start;
+    time_point end;
 
-    StartEnd (TimeReading start = 0, TimeReading end = 0)
+    StartEnd (time_point start = time_zero, time_point end = time_zero)
         : start(start), end(end) {}
 };
 
@@ -58,15 +59,9 @@ Gen gl_timings_gen;
 bool gather_timings = false;
 } // namespace
 
-void kxt::init ()
-{
+void kxt::init () {}
 
-}
-
-void kxt::quit ()
-{
-
-}
+void kxt::quit () {}
 
 void kxt::set_sync_function (const std::function<void ()>& sync_f)
 {
